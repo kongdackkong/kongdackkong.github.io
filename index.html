@@ -1,113 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Dev_Kim — Apps & Projects</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#FDFCF9;color:#1a1a1a;line-height:1.6}
-header{padding:20px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(253,252,249,.9);backdrop-filter:blur(10px);z-index:10}
-.logo{font-size:19px;font-weight:800;display:flex;align-items:center;gap:10px}
-.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,#FF6B6B,#FF9F43);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:800}
-nav a{text-decoration:none;color:#888;font-size:13px;margin-left:24px;transition:color .2s}
-nav a:hover{color:#1a1a1a}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이음 — 주선자를 위한 친구 카탈로그</title>
+  <meta name="description" content="솔로 친구들의 프로필을 모아 관리하고, 잘 어울릴 것 같은 사람에게 공유해보세요." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif; background: #fcfbf8; color: #242424; }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 64px 24px 48px; }
 
-.hero{max-width:1000px;margin:0 auto;padding:80px 24px 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#FFF3E8;border:1px solid #FFD9B5;padding:7px 18px;border-radius:50px;font-size:12px;font-weight:600;color:#C4763B;margin-bottom:22px}
-.dot{width:6px;height:6px;background:#FF9F43;border-radius:50%}
-.hero h1{font-size:50px;font-weight:800;letter-spacing:-2px;line-height:1.1;margin-bottom:18px}
-.hero h1 .accent{color:#FF6B6B}
-.hero p{font-size:17px;color:#888;margin-bottom:36px;line-height:1.75}
-.hero-cta{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;color:#fff;text-decoration:none;padding:14px 28px;border-radius:16px;font-size:15px;font-weight:600;transition:transform .15s}
-.hero-cta:hover{transform:translateY(-2px)}
-.hero-img{width:100%;border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.12);display:block}
+    .icon { width: 96px; height: 96px; border-radius: 22px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .icon img { width: 100%; height: 100%; object-fit: cover; }
 
-.apps{background:#fff;padding:90px 24px}
-.section-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:2.5px;color:#C4BDAE;text-transform:uppercase;margin-bottom:10px}
-.section-title{text-align:center;font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:50px}
-.app-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.app-card{border:1.5px solid #F0EBE3;border-radius:24px;padding:32px;transition:transform .15s,box-shadow .15s;background:#FDFCF9}
-.app-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
-.app-icon{width:56px;height:56px;background:linear-gradient(135deg,#FF6B6B,#FF9F43);border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;font-weight:800;margin-bottom:18px}
-.app-card h3{font-size:21px;font-weight:800;margin-bottom:6px}
-.app-card .tag{display:inline-block;font-size:11px;font-weight:700;color:#4CAF50;background:#EDF7EE;padding:3px 10px;border-radius:20px;margin-bottom:12px}
-.app-card p{font-size:14px;color:#888;margin-bottom:22px;line-height:1.7}
-.app-links{display:flex;gap:8px;flex-wrap:wrap}
-.app-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:12px;text-decoration:none;font-size:13px;font-weight:600;transition:transform .15s}
-.app-btn:hover{transform:translateY(-1px)}
-.btn-dark{background:#1a1a1a;color:#fff}
-.btn-light{background:#fff;color:#1a1a1a;border:1.5px solid #E8E4DC}
-.app-card.soon{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-style:dashed;background:#fff}
-.app-card.soon .app-icon{background:#F5F1EA;color:#C4BDAE}
-.app-card.soon h3{color:#C4BDAE}
+    h1 { margin-top: 24px; font-size: 42px; font-weight: 900; letter-spacing: 0.1em; }
+    .tagline { margin-top: 10px; font-size: 15px; font-weight: 600; color: #8d8982; line-height: 1.6; }
 
-footer{padding:60px 24px 40px;text-align:center}
-footer .logo{justify-content:center;margin-bottom:14px}
-footer p{font-size:13px;color:#aaa;margin-bottom:6px}
-footer a{color:#888;text-decoration:none;font-weight:600}
-footer a:hover{color:#1a1a1a}
+    .badge-row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: #242424; color: #fff; border-radius: 14px; padding: 12px 20px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity .15s; }
+    .badge:hover { opacity: .8; }
+    .badge svg { width: 20px; height: 20px; fill: #fff; }
+    .badge-soon { background: #f0ece4; color: #8d8982; cursor: default; }
 
-@media(max-width:760px){
-  .hero{grid-template-columns:1fr;padding:50px 24px 60px;text-align:center}
-  .hero-img{order:-1;max-width:320px;margin:0 auto}
-  .hero h1{font-size:36px}
-  .app-grid{grid-template-columns:1fr}
-  header{padding:16px 20px}
-}
-</style>
+    .features { margin-top: 48px; background: #fff; border: 1px solid #e8e4dc; border-radius: 24px; padding: 28px; }
+    .features h2 { font-size: 18px; font-weight: 900; margin-bottom: 20px; }
+    .feat { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; }
+    .feat:last-child { margin-bottom: 0; }
+    .feat-icon { width: 40px; height: 40px; border-radius: 50%; background: #f8f2ea; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .feat-title { font-size: 14px; font-weight: 900; }
+    .feat-desc { font-size: 13px; font-weight: 600; color: #8d8982; margin-top: 3px; line-height: 1.5; }
+
+    footer { margin-top: 56px; text-align: center; font-size: 12px; font-weight: 600; color: #b8b4ae; }
+    footer a { color: #b8b4ae; text-decoration: underline; text-underline-offset: 3px; }
+    footer a:hover { color: #242424; }
+    .dot { margin: 0 6px; }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <div class="icon">
+      <img src="https://yium.vercel.app/og-image.png" alt="이음 아이콘" />
+    </div>
 
-<header>
-  <div class="logo"><div class="logo-mark">K</div>Dev_Kim</div>
-  <nav>
-    <a href="#apps">Apps</a>
-    <a href="mailto:elitekira@gmail.com">Contact</a>
-  </nav>
-</header>
+    <h1>이음</h1>
+    <p class="tagline">솔로 친구들의 프로필을 모아 관리하고<br>잘 어울릴 것 같은 사람에게 공유해보세요.</p>
 
-<section class="hero">
-  <div>
-    <div class="hero-badge"><span class="dot"></span>Indie App Developer</div>
-    <h1>Hi, I'm <span class="accent">Dev_Kim</span> 👋<br/>I build apps people love.</h1>
-    <p>One-person studio crafting simple, useful apps.<br/>Currently building AI-powered learning tools.</p>
-    <a class="hero-cta" href="#apps">See my apps ↓</a>
-  </div>
-  <img class="hero-img" src="me.png" alt="Dev_Kim at work"/>
-</section>
+    <div class="badge-row">
+      <a class="badge" href="https://apps.apple.com/app/id0000000000" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+      <span class="badge badge-soon">
+        <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.25.99.22l13.5-12.36-2.79-2.79L3.18 23.76zM20.65 10.56l-2.98-1.7-3.13 2.87 3.13 2.87 3.01-1.72c.86-.49.86-1.83-.03-2.32zM3.18.24C2.83.56 2.62 1.1 2.62 1.8v20.41l10.62-10.62L3.18.24z"/></svg>
+        Google Play <span style="font-size:11px; opacity:.6; margin-left:2px;">준비중</span>
+      </span>
+    </div>
 
-<section class="apps" id="apps">
-  <div class="section-label">Projects</div>
-  <div class="section-title">Apps I've built</div>
-  <div class="app-grid">
-
-    <div class="app-card">
-      <div class="app-icon">가</div>
-      <h3>Hana Lang</h3>
-      <span class="tag">● Live on App Store & Google Play</span>
-      <p>AI language tutor for learning Korean — personalized curriculum, quizzes, and 1:1 conversation practice with AI tutor Hana.</p>
-      <div class="app-links">
-        <a class="app-btn btn-dark" href="https://apps.apple.com/us/app/hana-lang-ai-language-tutor/id6780868338"> App Store</a>
-        <a class="app-btn btn-dark" href="https://play.google.com/store/apps/details?id=com.pchyper.hana_lang">▶ Google Play</a>
-        <a class="app-btn btn-light" href="/hana-lang/">Website →</a>
+    <div class="features">
+      <h2>주선자를 위한 앱이에요</h2>
+      <div class="feat">
+        <div class="feat-icon">🔗</div>
+        <div>
+          <p class="feat-title">프로필 입력 링크</p>
+          <p class="feat-desc">솔로 친구에게 링크를 보내면 친구가 직접 이름·나이·사진을 입력해요.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📋</div>
+        <div>
+          <p class="feat-title">친구 리스트 공유</p>
+          <p class="feat-desc">모아둔 친구 목록을 필요한 사람에게 링크로 공유해요.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">💘</div>
+        <div>
+          <p class="feat-title">관심 표시</p>
+          <p class="feat-desc">리스트를 받은 사람이 마음에 드는 프로필에 관심을 남기면 주선자에게 알림이 와요.</p>
+        </div>
       </div>
     </div>
 
-    <div class="app-card soon">
-      <div class="app-icon">?</div>
-      <h3>Next app in the works</h3>
-      <p>Something new is brewing ☕</p>
-    </div>
-
+    <footer>
+      <p>
+        <a href="privacy.html">개인정보처리방침</a>
+        <span class="dot">·</span>
+        <a href="terms.html">이용약관</a>
+        <span class="dot">·</span>
+        <a href="mailto:elitekira@gmail.com">문의</a>
+      </p>
+      <p style="margin-top:10px;">© 2025 이음. All rights reserved.</p>
+    </footer>
   </div>
-</section>
-
-<footer>
-  <div class="logo"><div class="logo-mark">K</div>Dev_Kim</div>
-  <p>Building apps, one idea at a time.</p>
-  <p><a href="mailto:elitekira@gmail.com">elitekira@gmail.com</a></p>
-</footer>
-
 </body>
 </html>
