@@ -7,17 +7,7 @@
 <title>BearAlign — 거북목·라운드 숄더 자세 알람</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#fff8f5;
-  --surface:#fff;
-  --ink:#2a1d24;
-  --muted:#9a7d86;
-  --primary:#ef4b7a;
-  --primary-dark:#d93365;
-  --mint:#86d2c7;
-  --line:#f0dfe5;
-  --cream:#fff4df;
-}
+:root{--bg:#fff8f5;--surface:#fff;--ink:#2a1d24;--muted:#9a7d86;--primary:#ef4b7a;--primary-dark:#d93365;--line:#f0dfe5}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
 header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(255,248,245,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:900;font-size:20px;letter-spacing:-.3px}
@@ -38,7 +28,7 @@ h1 span{color:var(--primary)}
 .btn-secondary{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
 .btn-secondary:hover{transform:translateY(-1px);border-color:#d9c7ce}
 .hero-art{position:relative}
-.hero-art::before{content:"";position:absolute;inset:22px -10px -18px 28px;background:linear-gradient(135deg,#ffe3eb,#d7f5ef);border-radius:38px;z-index:-1;filter:blur(.2px)}
+.hero-art::before{content:"";position:absolute;inset:22px -10px -18px 28px;background:linear-gradient(135deg,#ffe3eb,#d7f5ef);border-radius:38px;z-index:-1}
 .hero-art img{display:block;width:100%;border-radius:34px;box-shadow:0 28px 65px rgba(80,55,61,.18);border:1px solid rgba(255,255,255,.7)}
 .section{padding:78px 28px}
 .section.white{background:var(--surface)}
@@ -69,7 +59,16 @@ h1 span{color:var(--primary)}
 footer{padding:28px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#b19aa3;font-size:13px}
 footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
 @media(max-width:820px){
-  header{padding:14px 20px}nav{gap:14px}.hero{grid-template-columns:1fr;padding-top:44px}h1{font-size:40px}.features{grid-template-columns:1fr}.routine{grid-template-columns:1fr}.story{grid-template-columns:1fr;padding:30px}.title{font-size:28px}footer{padding:24px 20px;flex-direction:column}footer a{margin:0 16px 0 0}
+  header{padding:14px 20px}
+  nav{gap:14px}
+  .hero{grid-template-columns:1fr;padding-top:44px}
+  h1{font-size:40px}
+  .features{grid-template-columns:1fr}
+  .routine{grid-template-columns:1fr}
+  .story{grid-template-columns:1fr;padding:30px}
+  .title{font-size:28px}
+  footer{padding:24px 20px;flex-direction:column}
+  footer a{margin:0 16px 0 0}
 }
 </style>
 </head>
@@ -77,7 +76,7 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
 
 <header>
   <a class="brand" href="./index.html">
-    <img src="assets/images/app_icon_bearalign.png" alt="BearAlign app icon"/>
+    <img src="./icon.png" alt="BearAlign app icon"/>
     BearAlign
   </a>
   <nav>
@@ -99,7 +98,7 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
       </div>
     </div>
     <div class="hero-art">
-      <img src="assets/images/store_feature_graphic.png" alt="곰돌이가 스트레칭으로 자세를 개선하는 BearAlign 이미지"/>
+      <img src="./store_feature_graphic.png" alt="곰돌이가 스트레칭으로 자세를 개선하는 BearAlign 이미지"/>
     </div>
   </section>
 
@@ -145,7 +144,7 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
   <section class="section">
     <div class="section-inner routine">
       <div class="phone-card">
-        <img src="assets/images/instagram_ads/bearalign_character_02.png" alt="곰돌이 코치와 함께 스트레칭하는 BearAlign 캐릭터 이미지"/>
+        <img src="./bearalign_character_02.png" alt="곰돌이 코치와 함께 스트레칭하는 BearAlign 캐릭터 이미지"/>
       </div>
       <div class="steps">
         <div class="step">
@@ -172,7 +171,7 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
           <p>BearAlign은 대단한 운동 앱이라기보다, “지금 또 목 나왔다” 하고 귀엽게 알려주는 작은 코치 같은 앱입니다.</p>
           <p>오래 앉아 일하거나 공부하는 사람, 폰을 보다가 목과 어깨가 굳는 사람에게 맞춰 만들었습니다.</p>
         </div>
-        <img src="assets/images/instagram_ads/bearalign_character_03.png" alt="자세를 펴고 웃는 BearAlign 캐릭터와 곰돌이 코치"/>
+        <img src="./bearalign_character_03.png" alt="자세를 펴고 웃는 BearAlign 캐릭터와 곰돌이 코치"/>
       </div>
     </div>
   </section>
@@ -180,7 +179,7 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
   <section id="download" class="download">
     <div class="label">Download</div>
     <h2>오늘부터 곰돌이 코치와<br>자세 습관을 시작해보세요.</h2>
-    <p>앱 스토어 링크는 출시 상태에 맞춰 업데이트됩니다.</p>
+    <p>iPhone과 Android에서 BearAlign을 만나보세요.</p>
     <div class="cta-row" style="justify-content:center">
       <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728">App Store</a>
       <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pchyper.stretcher">Google Play</a>
@@ -206,7 +205,7 @@ downloadBtn?.addEventListener("click",(event)=>{
   event.preventDefault();
   const ua=navigator.userAgent||navigator.vendor||"";
   const isAndroid=/android/i.test(ua);
-  const isIOS=/iPad|iPhone|iPod/.test(ua)||navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1;
+  const isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
   window.location.href=isAndroid?playStoreUrl:isIOS?appStoreUrl:appStoreUrl;
 });
 </script>
