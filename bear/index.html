@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="BearAlign은 거북목과 라운드 숄더 습관을 관리할 수 있도록 자세 알림과 짧은 스트레칭 루틴을 제공하는 앱입니다."/>
-<title>BearAlign — 거북목·라운드 숄더 자세 알람</title>
+<meta name="description" content="BearAlign helps you build posture reminder habits and short stretching routines for forward head posture and rounded shoulders."/>
+<title>BearAlign — Posture Reminder for Neck & Shoulders</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#fff8f5;--surface:#fff;--ink:#2a1d24;--muted:#9a7d86;--primary:#ef4b7a;--primary-dark:#d93365;--line:#f0dfe5}
@@ -80,9 +80,9 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
     BearAlign
   </a>
   <nav>
-    <a href="#features">기능</a>
-    <a href="#download">다운로드</a>
-    <a href="./privacy.html">개인정보처리방침</a>
+    <a href="#features" data-i18n="navFeatures">Features</a>
+    <a href="#download" data-i18n="navDownload">Download</a>
+    <a href="./privacy.html" data-i18n="navPrivacy">Privacy Policy</a>
   </nav>
 </header>
 
@@ -90,52 +90,52 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
   <section class="hero">
     <div>
       <div class="badge"><span class="badge-dot"></span> POSTURE REMINDER APP</div>
-      <h1>거북목·라운드 숄더,<br><span>곰돌이 코치</span>와<br>조금씩 펴봐요.</h1>
-      <p>BearAlign은 오래 앉아 있는 사람을 위한 자세 알림 앱입니다. 원하는 주기로 알림을 받고, 3~5분짜리 짧은 스트레칭 루틴으로 목과 어깨 습관을 관리해보세요.</p>
+      <h1 data-i18n-html="heroTitle">Straighten your neck<br>and shoulders with<br><span>your bear coach.</span></h1>
+      <p data-i18n="heroDesc">BearAlign is a posture reminder app for people who sit for long hours. Get reminders on your schedule and follow short 3–5 minute stretching routines for your neck and shoulders.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728" id="downloadBtn">앱 다운로드</a>
-        <a class="btn btn-secondary" href="./privacy.html">개인정보처리방침</a>
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728" id="downloadBtn" data-i18n="downloadApp">Download App</a>
+        <a class="btn btn-secondary" href="./privacy.html" data-i18n="privacyPolicy">Privacy Policy</a>
       </div>
     </div>
     <div class="hero-art">
-      <img src="./store_feature_graphic.png" alt="곰돌이가 스트레칭으로 자세를 개선하는 BearAlign 이미지"/>
+      <img src="./store_feature_graphic.png" alt="BearAlign image of a bear improving posture through stretching"/>
     </div>
   </section>
 
   <section id="features" class="section white">
     <div class="section-inner">
       <div class="label">Features</div>
-      <h2 class="title">자세를 까먹는 순간마다<br>귀엽게 다시 알려줘요</h2>
+      <h2 class="title" data-i18n-html="featuresTitle">A gentle reminder<br>whenever your posture slips</h2>
       <div class="features">
         <div class="card">
           <div class="icon">⏰</div>
-          <h3>자세 체크 알림</h3>
-          <p>15분부터 시간 단위 알림까지, 원하는 주기로 가슴과 허리를 펴는 습관을 만들 수 있어요.</p>
+          <h3 data-i18n="feature1Title">Posture Check Reminders</h3>
+          <p data-i18n="feature1Desc">Build a habit of opening your chest and straightening your back with reminders from every 15 minutes to hourly schedules.</p>
         </div>
         <div class="card">
           <div class="icon">🐻</div>
-          <h3>곰돌이 스트레칭</h3>
-          <p>친근한 곰돌이 이미지와 함께 턱 당기기, 가슴 열기, 벽 천사 운동 같은 루틴을 따라 해요.</p>
+          <h3 data-i18n="feature2Title">Bear Stretching Coach</h3>
+          <p data-i18n="feature2Desc">Follow friendly bear-guided routines like chin tucks, chest openers, and wall angels.</p>
         </div>
         <div class="card">
           <div class="icon">🧘</div>
-          <h3>상황별 루틴 추천</h3>
-          <p>앉아서, 서서, 바닥에서 하는 운동과 밴드·폼롤러 보유 여부에 맞춰 루틴을 조합해요.</p>
+          <h3 data-i18n="feature3Title">Routine by Situation</h3>
+          <p data-i18n="feature3Desc">Choose routines based on whether you are sitting, standing, on the floor, or using a band or foam roller.</p>
         </div>
         <div class="card">
           <div class="icon">🔊</div>
-          <h3>알람음 선택</h3>
-          <p>한국어와 영어 환경에 맞는 알림음을 선택하고, 스트레칭을 시작할 타이밍을 놓치지 않아요.</p>
+          <h3 data-i18n="feature4Title">Alarm Sound Selection</h3>
+          <p data-i18n="feature4Desc">Choose reminder sounds that fit your Korean or English environment and never miss your stretch time.</p>
         </div>
         <div class="card">
           <div class="icon">📊</div>
-          <h3>기록 확인</h3>
-          <p>오늘의 루틴, 완료 기록, 예상 소요 시간을 한눈에 보고 작은 성취를 쌓아갈 수 있어요.</p>
+          <h3 data-i18n="feature5Title">Progress Records</h3>
+          <p data-i18n="feature5Desc">Check today’s routine, completed sessions, and estimated time at a glance.</p>
         </div>
         <div class="card">
           <div class="icon">🔒</div>
-          <h3>로컬 중심 설계</h3>
-          <p>알림 설정과 운동 기록은 기본적으로 기기 내부에 저장되며, 계정 가입 없이 사용할 수 있어요.</p>
+          <h3 data-i18n="feature6Title">Local-first Design</h3>
+          <p data-i18n="feature6Desc">Notification settings and exercise records are stored on your device by default. No account required.</p>
         </div>
       </div>
     </div>
@@ -144,20 +144,29 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
   <section class="section">
     <div class="section-inner routine">
       <div class="phone-card">
-        <img src="./bearalign_character_02.png" alt="곰돌이 코치와 함께 스트레칭하는 BearAlign 캐릭터 이미지"/>
+        <img src="./bearalign_character_02.png" alt="BearAlign character stretching with a bear coach"/>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div><h3>알림 주기 설정</h3><p>내 생활 리듬에 맞춰 자세 체크 시간을 정해요.</p></div>
+          <div>
+            <h3 data-i18n="step1Title">Set your reminder interval</h3>
+            <p data-i18n="step1Desc">Pick posture check times that fit your daily rhythm.</p>
+          </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div><h3>오늘 가능한 운동 선택</h3><p>앉아서 할지, 서서 할지, 밴드나 폼롤러가 있는지에 맞춰 루틴을 구성해요.</p></div>
+          <div>
+            <h3 data-i18n="step2Title">Choose today’s exercise mode</h3>
+            <p data-i18n="step2Desc">Build a routine based on sitting, standing, or available tools like a band or foam roller.</p>
+          </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div><h3>3~5분만 따라 하기</h3><p>짧고 부담 없는 운동으로 거북목과 라운드 숄더 습관을 조금씩 관리해요.</p></div>
+          <div>
+            <h3 data-i18n="step3Title">Follow for 3–5 minutes</h3>
+            <p data-i18n="step3Desc">Manage forward head posture and rounded shoulder habits with short, easy routines.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -167,38 +176,142 @@ footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
     <div class="section-inner">
       <div class="story">
         <div>
-          <h2>“어렸을 때부터 거북목이 심해서,<br>나부터 고쳐보려고 만들었어요.”</h2>
-          <p>BearAlign은 대단한 운동 앱이라기보다, “지금 또 목 나왔다” 하고 귀엽게 알려주는 작은 코치 같은 앱입니다.</p>
-          <p>오래 앉아 일하거나 공부하는 사람, 폰을 보다가 목과 어깨가 굳는 사람에게 맞춰 만들었습니다.</p>
+          <h2 data-i18n-html="storyTitle">“I made this because<br>I wanted to fix my own posture first.”</h2>
+          <p data-i18n="storyDesc1">BearAlign is less like a serious workout app and more like a cute little coach that says, “Hey, your neck is out again.”</p>
+          <p data-i18n="storyDesc2">It is made for people who work, study, or scroll for long hours and end up with a stiff neck and shoulders.</p>
         </div>
-        <img src="./bearalign_character_03.png" alt="자세를 펴고 웃는 BearAlign 캐릭터와 곰돌이 코치"/>
+        <img src="./bearalign_character_03.png" alt="BearAlign character smiling with better posture and a bear coach"/>
       </div>
     </div>
   </section>
 
   <section id="download" class="download">
     <div class="label">Download</div>
-    <h2>오늘부터 곰돌이 코치와<br>자세 습관을 시작해보세요.</h2>
-    <p>iPhone과 Android에서 BearAlign을 만나보세요.</p>
+    <h2 data-i18n-html="downloadTitle">Start building your posture habit<br>with your bear coach today.</h2>
+    <p data-i18n="downloadDesc">BearAlign is available for iPhone and Android.</p>
     <div class="cta-row" style="justify-content:center">
       <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728">App Store</a>
       <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pchyper.stretcher">Google Play</a>
     </div>
-    <div class="store-note">문의: <a href="mailto:elitekira@gmail.com" style="color:#8f727c">elitekira@gmail.com</a></div>
+    <div class="store-note">Contact: <a href="mailto:elitekira@gmail.com" style="color:#8f727c">elitekira@gmail.com</a></div>
   </section>
 </main>
 
 <footer>
   <div>© 2026 BearAlign. All rights reserved.</div>
   <div>
-    <a href="./privacy.html">Privacy Policy</a>
-    <a href="mailto:elitekira@gmail.com">Contact</a>
+    <a href="./privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
+    <a href="mailto:elitekira@gmail.com" data-i18n="footerContact">Contact</a>
   </div>
 </footer>
 
 <script>
 const appStoreUrl="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728";
 const playStoreUrl="https://play.google.com/store/apps/details?id=com.pchyper.stretcher";
+
+const translations={
+  ko:{
+    title:"BearAlign — 거북목·라운드 숄더 자세 알람",
+    description:"BearAlign은 거북목과 라운드 숄더 습관을 관리할 수 있도록 자세 알림과 짧은 스트레칭 루틴을 제공하는 앱입니다.",
+    navFeatures:"기능",
+    navDownload:"다운로드",
+    navPrivacy:"개인정보처리방침",
+    heroTitle:"거북목·라운드 숄더,<br><span>곰돌이 코치</span>와<br>조금씩 펴봐요.",
+    heroDesc:"BearAlign은 오래 앉아 있는 사람을 위한 자세 알림 앱입니다. 원하는 주기로 알림을 받고, 3~5분짜리 짧은 스트레칭 루틴으로 목과 어깨 습관을 관리해보세요.",
+    downloadApp:"앱 다운로드",
+    privacyPolicy:"개인정보처리방침",
+    featuresTitle:"자세를 까먹는 순간마다<br>귀엽게 다시 알려줘요",
+    feature1Title:"자세 체크 알림",
+    feature1Desc:"15분부터 시간 단위 알림까지, 원하는 주기로 가슴과 허리를 펴는 습관을 만들 수 있어요.",
+    feature2Title:"곰돌이 스트레칭",
+    feature2Desc:"친근한 곰돌이 이미지와 함께 턱 당기기, 가슴 열기, 벽 천사 운동 같은 루틴을 따라 해요.",
+    feature3Title:"상황별 루틴 추천",
+    feature3Desc:"앉아서, 서서, 바닥에서 하는 운동과 밴드·폼롤러 보유 여부에 맞춰 루틴을 조합해요.",
+    feature4Title:"알람음 선택",
+    feature4Desc:"한국어와 영어 환경에 맞는 알림음을 선택하고, 스트레칭을 시작할 타이밍을 놓치지 않아요.",
+    feature5Title:"기록 확인",
+    feature5Desc:"오늘의 루틴, 완료 기록, 예상 소요 시간을 한눈에 보고 작은 성취를 쌓아갈 수 있어요.",
+    feature6Title:"로컬 중심 설계",
+    feature6Desc:"알림 설정과 운동 기록은 기본적으로 기기 내부에 저장되며, 계정 가입 없이 사용할 수 있어요.",
+    step1Title:"알림 주기 설정",
+    step1Desc:"내 생활 리듬에 맞춰 자세 체크 시간을 정해요.",
+    step2Title:"오늘 가능한 운동 선택",
+    step2Desc:"앉아서 할지, 서서 할지, 밴드나 폼롤러가 있는지에 맞춰 루틴을 구성해요.",
+    step3Title:"3~5분만 따라 하기",
+    step3Desc:"짧고 부담 없는 운동으로 거북목과 라운드 숄더 습관을 조금씩 관리해요.",
+    storyTitle:"“어렸을 때부터 거북목이 심해서,<br>나부터 고쳐보려고 만들었어요.”",
+    storyDesc1:"BearAlign은 대단한 운동 앱이라기보다, “지금 또 목 나왔다” 하고 귀엽게 알려주는 작은 코치 같은 앱입니다.",
+    storyDesc2:"오래 앉아 일하거나 공부하는 사람, 폰을 보다가 목과 어깨가 굳는 사람에게 맞춰 만들었습니다.",
+    downloadTitle:"오늘부터 곰돌이 코치와<br>자세 습관을 시작해보세요.",
+    downloadDesc:"iPhone과 Android에서 BearAlign을 만나보세요.",
+    footerPrivacy:"개인정보처리방침",
+    footerContact:"문의"
+  },
+  en:{
+    title:"BearAlign — Posture Reminder for Neck & Shoulders",
+    description:"BearAlign helps you build posture reminder habits and short stretching routines for forward head posture and rounded shoulders.",
+    navFeatures:"Features",
+    navDownload:"Download",
+    navPrivacy:"Privacy Policy",
+    heroTitle:"Straighten your neck<br>and shoulders with<br><span>your bear coach.</span>",
+    heroDesc:"BearAlign is a posture reminder app for people who sit for long hours. Get reminders on your schedule and follow short 3–5 minute stretching routines for your neck and shoulders.",
+    downloadApp:"Download App",
+    privacyPolicy:"Privacy Policy",
+    featuresTitle:"A gentle reminder<br>whenever your posture slips",
+    feature1Title:"Posture Check Reminders",
+    feature1Desc:"Build a habit of opening your chest and straightening your back with reminders from every 15 minutes to hourly schedules.",
+    feature2Title:"Bear Stretching Coach",
+    feature2Desc:"Follow friendly bear-guided routines like chin tucks, chest openers, and wall angels.",
+    feature3Title:"Routine by Situation",
+    feature3Desc:"Choose routines based on whether you are sitting, standing, on the floor, or using a band or foam roller.",
+    feature4Title:"Alarm Sound Selection",
+    feature4Desc:"Choose reminder sounds that fit your Korean or English environment and never miss your stretch time.",
+    feature5Title:"Progress Records",
+    feature5Desc:"Check today’s routine, completed sessions, and estimated time at a glance.",
+    feature6Title:"Local-first Design",
+    feature6Desc:"Notification settings and exercise records are stored on your device by default. No account required.",
+    step1Title:"Set your reminder interval",
+    step1Desc:"Pick posture check times that fit your daily rhythm.",
+    step2Title:"Choose today’s exercise mode",
+    step2Desc:"Build a routine based on sitting, standing, or available tools like a band or foam roller.",
+    step3Title:"Follow for 3–5 minutes",
+    step3Desc:"Manage forward head posture and rounded shoulder habits with short, easy routines.",
+    storyTitle:"“I made this because<br>I wanted to fix my own posture first.”",
+    storyDesc1:"BearAlign is less like a serious workout app and more like a cute little coach that says, “Hey, your neck is out again.”",
+    storyDesc2:"It is made for people who work, study, or scroll for long hours and end up with a stiff neck and shoulders.",
+    downloadTitle:"Start building your posture habit<br>with your bear coach today.",
+    downloadDesc:"BearAlign is available for iPhone and Android.",
+    footerPrivacy:"Privacy Policy",
+    footerContact:"Contact"
+  }
+};
+
+function getPreferredLanguage(){
+  const langs=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""];
+  return langs.some(lang=>String(lang).toLowerCase().startsWith("ko"))?"ko":"en";
+}
+
+function applyLanguage(lang){
+  const t=translations[lang]||translations.en;
+  document.documentElement.lang=lang;
+  document.title=t.title;
+
+  const metaDescription=document.querySelector('meta[name="description"]');
+  if(metaDescription) metaDescription.setAttribute("content",t.description);
+
+  document.querySelectorAll("[data-i18n]").forEach((el)=>{
+    const key=el.getAttribute("data-i18n");
+    if(t[key]) el.textContent=t[key];
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el)=>{
+    const key=el.getAttribute("data-i18n-html");
+    if(t[key]) el.innerHTML=t[key];
+  });
+}
+
+applyLanguage(getPreferredLanguage());
+
 const downloadBtn=document.getElementById("downloadBtn");
 
 downloadBtn?.addEventListener("click",(event)=>{
