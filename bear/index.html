@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="BearAlign은 거북목과 라운드 숄더 습관을 관리할 수 있도록 자세 알림과 짧은 스트레칭 루틴을 제공하는 앱입니다."/>
+<title>BearAlign — 거북목·라운드 숄더 자세 알람</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#fff8f5;
+  --surface:#fff;
+  --ink:#2a1d24;
+  --muted:#9a7d86;
+  --primary:#ef4b7a;
+  --primary-dark:#d93365;
+  --mint:#86d2c7;
+  --line:#f0dfe5;
+  --cream:#fff4df;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(255,248,245,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:900;font-size:20px;letter-spacing:-.3px}
+.brand img{width:42px;height:42px;border-radius:14px;border:1px solid #ded8dc;box-shadow:0 10px 24px rgba(122,74,30,.13)}
+nav{display:flex;align-items:center;gap:24px}
+nav a{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.hero{max-width:1120px;margin:0 auto;padding:74px 28px 64px;display:grid;grid-template-columns:1fr 1.05fr;gap:46px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--primary);font-size:12px;font-weight:900;margin-bottom:22px;box-shadow:0 8px 22px rgba(239,75,122,.08)}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--primary)}
+h1{font-size:56px;line-height:1.05;letter-spacing:-2px;font-weight:950;margin-bottom:20px}
+h1 span{color:var(--primary)}
+.hero p{font-size:18px;color:var(--muted);max-width:520px;margin-bottom:30px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:18px;font-size:15px;font-weight:900;text-decoration:none;transition:.2s}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 16px 30px rgba(239,75,122,.24)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn-secondary{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-secondary:hover{transform:translateY(-1px);border-color:#d9c7ce}
+.hero-art{position:relative}
+.hero-art::before{content:"";position:absolute;inset:22px -10px -18px 28px;background:linear-gradient(135deg,#ffe3eb,#d7f5ef);border-radius:38px;z-index:-1;filter:blur(.2px)}
+.hero-art img{display:block;width:100%;border-radius:34px;box-shadow:0 28px 65px rgba(80,55,61,.18);border:1px solid rgba(255,255,255,.7)}
+.section{padding:78px 28px}
+.section.white{background:var(--surface)}
+.section-inner{max-width:1080px;margin:0 auto}
+.label{text-align:center;font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:#c4aeb6;font-weight:950;margin-bottom:12px}
+.title{text-align:center;font-size:34px;line-height:1.25;letter-spacing:-1.1px;font-weight:950;margin-bottom:44px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 14px 34px rgba(91,59,67,.05)}
+.card .icon{font-size:30px;margin-bottom:14px}
+.card h3{font-size:18px;font-weight:950;margin-bottom:8px}
+.card p{font-size:14px;color:var(--muted)}
+.routine{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}
+.phone-card{background:#fff;border:1px solid var(--line);border-radius:30px;padding:20px;box-shadow:0 18px 40px rgba(91,59,67,.08)}
+.phone-card img{width:100%;border-radius:24px;display:block}
+.steps{display:grid;gap:14px}
+.step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}
+.step-num{flex:0 0 34px;height:34px;border-radius:12px;background:#ffe1eb;color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:950}
+.step h3{font-size:17px;font-weight:950;margin-bottom:3px}
+.step p{font-size:14px;color:var(--muted)}
+.story{background:linear-gradient(135deg,#2a1d24,#432b35);color:#fff;border-radius:34px;padding:54px;margin-top:6px;display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;overflow:hidden}
+.story h2{font-size:36px;line-height:1.22;letter-spacing:-1px;margin-bottom:14px}
+.story p{color:#decbd2;font-size:16px;margin-bottom:14px}
+.story img{width:100%;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.download{padding:86px 28px;text-align:center;background:linear-gradient(180deg,#fff,#fff3f7)}
+.download h2{font-size:40px;letter-spacing:-1.3px;line-height:1.2;margin-bottom:12px}
+.download p{color:var(--muted);font-size:16px;margin-bottom:28px}
+.store-note{font-size:12px;color:#b19aa3;margin-top:12px}
+footer{padding:28px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#b19aa3;font-size:13px}
+footer a{color:#8f727c;text-decoration:none;margin-left:18px;font-weight:700}
+@media(max-width:820px){
+  header{padding:14px 20px}nav{gap:14px}.hero{grid-template-columns:1fr;padding-top:44px}h1{font-size:40px}.features{grid-template-columns:1fr}.routine{grid-template-columns:1fr}.story{grid-template-columns:1fr;padding:30px}.title{font-size:28px}footer{padding:24px 20px;flex-direction:column}footer a{margin:0 16px 0 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="./index.html">
+    <img src="assets/images/app_icon_bearalign.png" alt="BearAlign app icon"/>
+    BearAlign
+  </a>
+  <nav>
+    <a href="#features">기능</a>
+    <a href="#download">다운로드</a>
+    <a href="./privacy.html">개인정보처리방침</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <div class="badge"><span class="badge-dot"></span> POSTURE REMINDER APP</div>
+      <h1>거북목·라운드 숄더,<br><span>곰돌이 코치</span>와<br>조금씩 펴봐요.</h1>
+      <p>BearAlign은 오래 앉아 있는 사람을 위한 자세 알림 앱입니다. 원하는 주기로 알림을 받고, 3~5분짜리 짧은 스트레칭 루틴으로 목과 어깨 습관을 관리해보세요.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728" id="downloadBtn">앱 다운로드</a>
+        <a class="btn btn-secondary" href="./privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/images/store_feature_graphic.png" alt="곰돌이가 스트레칭으로 자세를 개선하는 BearAlign 이미지"/>
+    </div>
+  </section>
+
+  <section id="features" class="section white">
+    <div class="section-inner">
+      <div class="label">Features</div>
+      <h2 class="title">자세를 까먹는 순간마다<br>귀엽게 다시 알려줘요</h2>
+      <div class="features">
+        <div class="card">
+          <div class="icon">⏰</div>
+          <h3>자세 체크 알림</h3>
+          <p>1분 테스트부터 시간 단위 알림까지, 원하는 주기로 가슴과 허리를 펴는 습관을 만들 수 있어요.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🐻</div>
+          <h3>곰돌이 스트레칭</h3>
+          <p>친근한 곰돌이 이미지와 함께 턱 당기기, 가슴 열기, 벽 천사 운동 같은 루틴을 따라 해요.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧘</div>
+          <h3>상황별 루틴 추천</h3>
+          <p>앉아서, 서서, 바닥에서 하는 운동과 밴드·폼롤러 보유 여부에 맞춰 루틴을 조합해요.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔊</div>
+          <h3>알람음 선택</h3>
+          <p>한국어와 영어 환경에 맞는 알림음을 선택하고, 스트레칭을 시작할 타이밍을 놓치지 않아요.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>기록 확인</h3>
+          <p>오늘의 루틴, 완료 기록, 예상 소요 시간을 한눈에 보고 작은 성취를 쌓아갈 수 있어요.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔒</div>
+          <h3>로컬 중심 설계</h3>
+          <p>알림 설정과 운동 기록은 기본적으로 기기 내부에 저장되며, 계정 가입 없이 사용할 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner routine">
+      <div class="phone-card">
+        <img src="assets/images/instagram_ads/bearalign_character_02.png" alt="곰돌이 코치와 함께 스트레칭하는 BearAlign 캐릭터 이미지"/>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div><h3>알림 주기 설정</h3><p>내 생활 리듬에 맞춰 자세 체크 시간을 정해요.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div><h3>오늘 가능한 운동 선택</h3><p>앉아서 할지, 서서 할지, 밴드나 폼롤러가 있는지에 맞춰 루틴을 구성해요.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div><h3>3~5분만 따라 하기</h3><p>짧고 부담 없는 운동으로 거북목과 라운드 숄더 습관을 조금씩 관리해요.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="section-inner">
+      <div class="story">
+        <div>
+          <h2>“어렸을 때부터 거북목이 심해서,<br>나부터 고쳐보려고 만들었어요.”</h2>
+          <p>BearAlign은 대단한 운동 앱이라기보다, “지금 또 목 나왔다” 하고 귀엽게 알려주는 작은 코치 같은 앱입니다.</p>
+          <p>오래 앉아 일하거나 공부하는 사람, 폰을 보다가 목과 어깨가 굳는 사람에게 맞춰 만들었습니다.</p>
+        </div>
+        <img src="assets/images/instagram_ads/bearalign_character_03.png" alt="자세를 펴고 웃는 BearAlign 캐릭터와 곰돌이 코치"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <div class="label">Download</div>
+    <h2>오늘부터 곰돌이 코치와<br>자세 습관을 시작해보세요.</h2>
+    <p>앱 스토어 링크는 출시 상태에 맞춰 업데이트됩니다.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728">App Store</a>
+      <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pchyper.stretcher">Google Play</a>
+    </div>
+    <div class="store-note">문의: <a href="mailto:elitekira@gmail.com" style="color:#8f727c">elitekira@gmail.com</a></div>
+  </section>
+</main>
+
+<footer>
+  <div>© 2026 BearAlign. All rights reserved.</div>
+  <div>
+    <a href="./privacy.html">Privacy Policy</a>
+    <a href="mailto:elitekira@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+const appStoreUrl="https://apps.apple.com/us/app/bearalign-neck-shoulder-alarm/id6789054728";
+const playStoreUrl="https://play.google.com/store/apps/details?id=com.pchyper.stretcher";
+const downloadBtn=document.getElementById("downloadBtn");
+
+downloadBtn?.addEventListener("click",(event)=>{
+  event.preventDefault();
+  const ua=navigator.userAgent||navigator.vendor||"";
+  const isAndroid=/android/i.test(ua);
+  const isIOS=/iPad|iPhone|iPod/.test(ua)||navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1;
+  window.location.href=isAndroid?playStoreUrl:isIOS?appStoreUrl:appStoreUrl;
+});
+</script>
+
+</body>
+</html>
